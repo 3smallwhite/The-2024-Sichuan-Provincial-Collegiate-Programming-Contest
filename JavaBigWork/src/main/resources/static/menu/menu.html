@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/index.css">
+    <script src="../lib/vue.js"></script>
+    <script src="../lib/index.js"></script>
+    <script src="../lib/axios.js"></script>
+    <script src="../lib/jquery.js"></script>
+
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+<div id="menu">
+    <el-container>
+        <el-header>
+            <h1>营销及服务一体化管理系统</h1>
+        </el-header>
+        <el-container style="height: 755px">
+            <el-aside style="width: 200px">
+                <el-menu
+                        background-color="#545c64"
+                        text-color="#fff"
+                        active-text-color="#ffd04b">
+                    <el-submenu>
+                        <template slot="title">
+                            <span>基本信息管理</span>
+                        </template>
+                        <el-menu-item>客户管理</el-menu-item>
+                        <el-menu-item>团队信息管理</el-menu-item>
+                        <el-menu-item>产品管理</el-menu-item>
+                    </el-submenu>
+                </el-menu>
+            </el-aside>
+            <el-main>
+                <iframe :src="urls[pageIndex]" style="height: 100%; width: 100%"></iframe>
+            </el-main>
+        </el-container>
+    </el-container>
+
+</div>
+<style>
+
+</style>
+<script>
+    let vm = new Vue({
+        el: '#menu',
+        data: {
+            pageIndex: 0,
+            urls: [
+                'http://localhost:8080/basicInformation/product/product.html'
+            ]
+        },
+        methods: {
+
+        }
+    })
+</script>
+</body>
+</html>

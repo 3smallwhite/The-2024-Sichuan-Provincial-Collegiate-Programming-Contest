@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../lib/index.css">
+    <script src="../../lib/vue.js"></script>
+    <script src="../../lib/index.js"></script>
+    <script src="../../lib/axios.js"></script>
+    <script src="../../lib/jquery.js"></script>
+</head>
+<body>
+<div id="product">
+    <template>
+        <el-row style="line-height: 100px">
+            <el-col :span="4">
+                <el-button @click="" type="success">新增</el-button>
+            </el-col>
+            <el-col :offset="12" :span="4">
+                <el-input v-model="findParam" placeholder="请输入关键字"></el-input>
+            </el-col>
+            <el-col :offset="1" :span="3">
+                <el-button @click="" type="primary">查询</el-button>
+            </el-col>
+        </el-row>
+    </template>
+
+    <el-table
+            :data="products">
+        <el-table-column
+                prop="name"
+                label="名称"
+                width="160">
+        </el-table-column>
+        <el-table-column
+                prop="model"
+                label="型号"
+                width="160">
+        </el-table-column>
+        <el-table-column
+                prop="size"
+                label="尺寸"
+                width="160">
+        </el-table-column>
+        <el-table-column
+                prop="weight"
+                label="重量"
+                width="160">
+        </el-table-column>
+        <el-table-column
+                prop="deliverDate"
+                label="交货日期"
+                width="160">
+        </el-table-column>
+        <el-table-column
+                prop="annex"
+                label="附件"
+                width="160">
+        </el-table-column>
+        <el-table-column
+                prop="notes"
+                label="备注"
+                width="160">
+        </el-table-column>
+        <el-table-column
+                label="操作">
+            <template slot-scope="scope">
+                <el-button @click="" type="primary" size="small">编辑</el-button>
+                <el-button @click="" type="danger" size="small">删除</el-button>
+            </template>
+        </el-table-column>
+    </el-table>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: '#product',
+        data: {
+            products: [
+                {name: '1'}
+            ],
+            findParam: null,
+        }
+    })
+</script>
+</body>
+</html>
